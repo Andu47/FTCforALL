@@ -26,9 +26,9 @@ public class Scurtulescu extends LinearOpMode {
               MotorJos.setPower(-0.8);
           if (gamepad1.b)
               MotorJos.setPower(0.8);
-          if(gamepad1.x);
+          if(gamepad1.x)
               MotorJos.setPower(0);
-          if (gamepad1.right_bumper);
+          if (gamepad1.right_bumper)
               MotorSus.setPower(0.8);
           if(gamepad1.y)
               MotorSus.setPower(0);

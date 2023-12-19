@@ -13,23 +13,20 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 
 @Config
-@TeleOp()
+@TeleOp(name="testServo")
 public class TestServo extends LinearOpMode {
 
     Servo servo;
 
     double poz = 0;
-
-    Telemetry telemetry;
-
     public void runOpMode(){
 
         servo=hardwareMap.get(Servo.class,"Servo");
 
-        telemetry = new MultipleTelemetry(this.telemetry, FtcDashboard.getInstance().getTelemetry());
-
-
         waitForStart();
+
+        Telemetry telemetry = new MultipleTelemetry(this.telemetry, FtcDashboard.getInstance().getTelemetry());
+
         while (opModeIsActive()){
             poz = poz + gamepad1.left_stick_y * 0.001;
 

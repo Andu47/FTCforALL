@@ -28,20 +28,18 @@ public class scurtu2 extends LinearOpMode {
 
     boolean pornit_servo = false;
 
-    Telemetry telemetry;
-
-
     public void runOpMode(){
         MotorJos=hardwareMap.get(DcMotor.class,"DcMotorJos");
         MotorSus=hardwareMap.get(DcMotor.class,"DcMotorSus");
         servo=hardwareMap.get(Servo.class,"Servo");
         MotorSus.setTargetPosition(pozMotor);
         MotorSus.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        telemetry = new MultipleTelemetry(this.telemetry, FtcDashboard.getInstance().getTelemetry());
-
         gm = new GamepadEx(gamepad1);
 
         waitForStart();
+
+        Telemetry telemetry = new MultipleTelemetry(this.telemetry, FtcDashboard.getInstance().getTelemetry());
+
         while (opModeIsActive()) {
             gm.getGamepadButton(GamepadKeys.Button.A).whenPressed(() -> pornire_motor_jos());
 
